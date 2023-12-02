@@ -1,0 +1,13 @@
+name: lint-project-files
+run-name: ${{github.actor}} is running lint-project-files
+on: [push]
+jobs:
+  prepare-node-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - run: npm install -g bats
+      - run: bats -v

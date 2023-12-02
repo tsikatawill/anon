@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+
+echo "================ Husky ================"
+echo "" &&
+
+# Run linting and auto-fix any issues
+echo "Run linting and auto-fix any issues"
+yarn lint:fix &&
+
+# Format code using Prettier
+echo "Format code using Prettier"
+yarn prettier:format &&
+
+# Stage all changes
+echo "Stage all changes"
+git add -A .
+
