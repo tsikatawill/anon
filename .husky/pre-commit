@@ -2,7 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 
-echo "================ Husky ================"
+echo "================ Husky Pre - Commit ================"
 echo "" &&
 
 # Run linting and auto-fix any issues
@@ -12,6 +12,10 @@ yarn lint:fix &&
 # Format code using Prettier
 echo "Format code using Prettier"
 yarn prettier:format &&
+
+# Run linting
+echo "Run linting"
+pnpm lint &&
 
 # Stage all changes
 echo "Stage all changes"
