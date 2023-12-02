@@ -2,6 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 
+echo ""
 echo "================ Husky Pre - Commit ================"
 echo "" &&
 
@@ -20,4 +21,3 @@ pnpm lint &&
 # Stage all changes
 echo "Stage all changes"
 git add -A .
-
