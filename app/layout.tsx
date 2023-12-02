@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Anon - Send anonymous messages",
   description:
     "Explore a unique take on self-expression in a safe, judgment-free space. Join us for a fresh perspective on anonymity, where individuals can freely share thoughts and opinions without constraints. Embrace the freedom to be yourself securely.",
+  openGraph: {
+    images: "/og-image.png",
+  },
 };
 
 export default function RootLayout({
@@ -17,7 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* <Navbar /> */}
+        {children}
+      </body>
     </html>
   );
 }
