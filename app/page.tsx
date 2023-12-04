@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { HowItWorks } from "./components/HowItWorks";
 import { PublicCampaigns } from "./components/PublicCampaigns";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Header />
       <PublicCampaigns />
+      <HowItWorks />
     </>
   );
 }

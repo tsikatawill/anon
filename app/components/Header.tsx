@@ -7,16 +7,16 @@ import { Navbar } from "./Navbar";
 
 export const Header = () => {
   return (
-    <div className="flex h-[500px] flex-col  bg-[url(/header-bg.avif)] md:min-h-screen">
+    <div className="flex h-[500px] flex-col  bg-[url(/header-bg/noise-1.png)] bg-cover bg-center bg-no-repeat md:min-h-screen">
       <Navbar />
       <header className="mt-1 flex flex-1 bg-cover bg-center bg-no-repeat pt-16 md:pt-20">
         <Container className="relative z-10 flex flex-col items-center justify-center gap-8 md:flex-row md:justify-start">
           <div className="left space-y-8 text-center md:text-left ">
             <div className="space-y-2">
-              <h1 className="text-balance hidden max-w-xl text-4xl font-bold sm:text-5xl md:max-w-full md:text-6xl lg:w-4/5 xl:text-8xl">
+              <h1 className="text-balance hidden max-w-xl text-3xl font-bold sm:text-5xl md:max-w-full md:text-6xl lg:w-4/5 xl:text-8xl">
                 Express your views Anonymously
               </h1>
-              <h1 className="text-balance mx-auto max-w-xl text-3xl font-bold sm:text-4xl md:mx-0 md:max-w-full md:text-5xl lg:w-4/5 xl:text-7xl">
+              <h1 className="text-balance mx-auto max-w-xl text-2xl font-bold sm:text-4xl md:mx-0 md:max-w-full md:text-5xl lg:w-4/5 xl:text-7xl">
                 Speak Freely, Stay Secure: Your Safe Haven for Authentic
                 Expression.
               </h1>
