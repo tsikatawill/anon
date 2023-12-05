@@ -7,7 +7,7 @@ import { Container } from "./Container";
 export const PublicCampaigns = () => {
   return (
     <section id="public-campaigns">
-      <Container className="grid grid-cols-1 gap-20 py-20 md:grid-cols-5 md:gap-10 md:py-32">
+      <Container className="grid grid-cols-1 gap-20 py-8 sm:py-16 md:grid-cols-5 md:gap-10 md:py-32">
         <div className="mx-auto max-w-md space-y-4 text-center md:col-span-2  md:mx-0 md:max-w-full md:text-left">
           <div className="space-y-2">
             <h2 className="text-2xl font-semibold md:text-4xl xl:text-5xl">

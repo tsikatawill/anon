@@ -1,3 +1,5 @@
+import { Footer } from "@/components/Footer";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -20,9 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {/* <Navbar /> */}
-        {children}
+      <body className={cn(inter.className, "flex min-h-screen flex-col")}>
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );
