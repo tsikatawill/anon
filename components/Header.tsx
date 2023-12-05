@@ -28,13 +28,13 @@ export const Header = () => {
 
             <form className="max-w-screen-md">
               <input
-                className="w-full rounded-sm border border-black px-4 py-2 text-center shadow-cs-2 shadow-red-500 outline-none focus:border-red-500  md:p-5 md:text-left"
+                className="shadow-cs-2 w-full rounded-sm border border-black px-4 py-2 text-center shadow-red-500 outline-none focus:border-red-500  md:p-5 md:text-left"
                 placeholder="Paste campaign id"
                 name="campaignId"
               />
             </form>
 
-            <button className="rounded-sm border border-black bg-green-700 px-4 py-3 text-white shadow-cs-2 shadow-black hover:bg-opacity-90 md:px-8 md:py-4">
+            <button className="shadow-cs-2 rounded-sm border border-black bg-green-700 px-4 py-3 text-white shadow-black hover:bg-opacity-90 md:px-8 md:py-4">
               Get started
             </button>
           </div>
