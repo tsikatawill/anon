@@ -1,4 +1,4 @@
-import { BACKGROUNDLIST, cn } from "../lib/utils";
+import { BACKGROUNDLIST, cn } from "@/lib/utils";
 
 type BtnVariant = "primary" | "secondary" | "blanc" | "noire";
 type BtnProps = React.ComponentProps<"button"> & {

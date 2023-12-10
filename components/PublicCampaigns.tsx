@@ -1,5 +1,5 @@
+import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { cn } from "../lib/utils";
 import { BtnBaseStyles, BtnVariantStyles } from "./Button";
 import { CampaignCard } from "./CampaignCard";
 import { Container } from "./Container";

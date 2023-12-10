@@ -1,8 +1,8 @@
 "use client";
 
+import { BACKGROUNDLIST } from "@/lib/utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { BACKGROUNDLIST } from "../lib/utils";
 import { Button } from "./Button";
 
 export const CampaignCard = ({ index }: { color?: string; index: number }) => {

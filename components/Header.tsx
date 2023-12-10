@@ -7,7 +7,7 @@ import { Navbar } from "./Navbar";
 
 export const Header = () => {
   return (
-    <div className="flex h-[500px] flex-col  bg-[url(/header-bg/noise-1.png)] bg-cover bg-center bg-no-repeat md:min-h-screen">
+    <div className="flex h-[500px] flex-col  bg-[url(/header-bg/grid.png)] bg-cover bg-center bg-no-repeat md:min-h-screen">
       <Navbar />
       <header className="mt-1 flex flex-1 bg-cover bg-center bg-no-repeat pt-16 md:pt-20">
         <Container className="relative z-10 flex flex-col items-center justify-center gap-8 md:flex-row md:justify-start">
