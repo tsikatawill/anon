@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
+        width: 1920,
         height: 1080,
         url: getCldOgImageUrl({
           src: "zlra5l8wdyorvmi49zqf",
