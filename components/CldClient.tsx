@@ -6,8 +6,9 @@ export const CldClient = ({ src }: { src: string }) => {
   return (
     <CldImage
       alt="..."
-      width="1920"
-      height="1080"
+      className="h-[1080px] w-[1920px] object-cover"
+      width={1920}
+      height={1080}
       src={src}
       overlays={[
         {
@@ -17,9 +18,10 @@ export const CldClient = ({ src }: { src: string }) => {
           text: {
             color: "black",
             fontFamily: "Lato",
-            fontSize: 100,
+            fontSize: 150,
+            lineSpacing: -20,
             fontWeight: "bold",
-            text: "Lorem kjh jkh kjh kgbkhjg gk hg hgkjgkjhggkgjh gkjjghguyg uguy guyguy giuygy ygo gu ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eum totam nostrum quisquam nobis architecto. kjhkjhl hgkl jgljk l glkg kg ljkglk jg lkgk lg",
+            text: "Have you ever had a secret crush on my girlfriend while we were still dating?",
           },
           position: {
             x: 100,

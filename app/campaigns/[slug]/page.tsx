@@ -23,7 +23,8 @@ export const metadata: Metadata = {
               text: {
                 color: "black",
                 fontFamily: "Lato",
-                fontSize: 100,
+                fontSize: 150,
+                lineSpacing: -20,
                 fontWeight: "bold",
                 text: desc,
               },
