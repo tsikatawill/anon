@@ -1,5 +1,12 @@
 import { CampaignCard } from "@/components/CampaignCard";
+import { Metadata } from "next";
 import { Container } from "../../components/Container";
+
+export const metadata: Metadata = {
+  title: "Public campaigns",
+  description:
+    "Engage in Public Campaigns Share Your Anonymous Views to Shape the Conversation.",
+};
 
 export default function CampaignsPage() {
   return (
