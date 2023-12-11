@@ -3,7 +3,7 @@ import { HowItWorks } from "../components/HowItWorks";
 import { PublicCampaigns } from "../components/PublicCampaigns";
 import { ServiceImprovement } from "../components/ServiceImprovement";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <Header />

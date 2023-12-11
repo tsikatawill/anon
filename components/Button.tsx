@@ -12,11 +12,12 @@ export const Button = ({
   variant = "primary",
   index = 1,
   children,
+  className,
   ...rest
 }: BtnProps) => {
   return (
     <button
-      className={cn(BtnBaseStyles, BtnVariantStyles[variant])}
+      className={cn(BtnBaseStyles, BtnVariantStyles[variant], className)}
       style={
         surpriseMe
           ? {
