@@ -6,18 +6,18 @@ export const HOW_IT_WORKS_STEPS: HowIWStep[] = [
     description:
       "You need an account to be able to create campaigns. A free account grants you access to the full features of Anon. Comes with a dashboard where you can track all your previous campaigns.",
     link: {
-      href: "/sign-up",
+      href: "/login",
       text: "Create a free account",
     },
     image: "/step-1.svg",
   },
   {
-    title: "Create & Configure campagin",
+    title: "Create & configure campagin",
     description:
       "We currently run two types of campaigns, polls and general text campaigns. You can choose between these two and lorem u can choose between these two and lorem",
     link: {
       href: "/login",
-      text: "Create a free account",
+      text: "Get started",
     },
     image: "/step-2.svg",
   },
@@ -27,7 +27,7 @@ export const HOW_IT_WORKS_STEPS: HowIWStep[] = [
       "Send your campaign link to your audience and wait for their responses. It couldn't be any easier.",
     link: {
       href: "/campagins/create",
-      text: "Start a campagin",
+      text: "Share a link",
     },
     image: "/step-3.svg",
   },

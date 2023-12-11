@@ -25,7 +25,7 @@ export const PublicCampaigns = () => {
             href="/campaigns"
             className={cn(
               BtnBaseStyles,
-              BtnVariantStyles.primary,
+              BtnVariantStyles.blanc,
               "mx-auto md:mx-0",
             )}
           >
