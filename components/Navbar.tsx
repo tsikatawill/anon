@@ -5,14 +5,18 @@ import { motion } from "framer-motion";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { BtnBaseStyles, BtnVariantStyles, Button } from "./Button";
 import { Container } from "./Container";
+import { LogoLink } from "./LogoLink";
 
 export const Navbar = ({
   user,
+  inHeader = false,
 }: {
+  inHeader?: boolean;
   user?:
     | {
         name?: string | null | undefined;
@@ -23,18 +27,15 @@ export const Navbar = ({
     | null;
 }) => {
   const [transparentBg, setTransparentBg] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setTransparentBg(false);
-        console.log("greater");
       } else {
         setTransparentBg(true);
-        console.log("less");
       }
-
-      console.log(window.scrollY);
     };
 
     window.addEventListener("scroll", () => handleScroll());
@@ -44,20 +45,18 @@ export const Navbar = ({
 
   return (
     <motion.nav
-      className={"fixed top-0 z-30 w-full bg-contain bg-center bg-repeat"}
-      animate={{
-        background: transparentBg ? "transparent" : "white",
-        top: transparentBg ? [-10, 0] : [10, 0],
-        transition: {
-          duration: 0.5,
-          ease: "easeIn",
-        },
-      }}
+      className={cn(
+        "bg-red-00 top-0 z-30 w-full",
+        inHeader ? "fixed" : "static",
+        inHeader && !transparentBg && "bg-white",
+        pathname === "/" && !inHeader && "hidden",
+      )}
+      animate={{ y: transparentBg ? [-10, 0] : [10, 0] }}
     >
-      <Container className="flex items-center justify-between py-2 md:py-4">
-        <Link href="/" className="block w-12 md:w-auto">
-          <Image src="/anon-logoo.png" width={80} height={80} alt="logo" />
-        </Link>
+      <Container
+        className={cn("flex items-center justify-between py-2 md:py-4")}
+      >
+        <LogoLink />
 
         {user ? (
           <div className="flex items-center gap-2">
@@ -92,7 +91,7 @@ export const Navbar = ({
             className={cn(
               BtnBaseStyles,
               BtnVariantStyles.noire,
-              "px-2 py-1 md:px-4 md:py-2",
+              "px-3 py-1 md:px-4 md:py-2",
             )}
           >
             Login

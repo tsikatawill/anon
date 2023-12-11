@@ -1,17 +1,17 @@
-import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
-import { Button } from "./Button";
+import { CampaginSearchForm } from "./CampaginSearchForm";
 import { Container } from "./Container";
 import { Navbar } from "./Navbar";
 import { SpinningHeaderText } from "./SpinningHeaderText";
 
 export const Header = async () => {
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession();
 
   return (
-    <div className="flex h-[500px] flex-col  bg-[url(/header-bg/noise-1.png)] bg-cover bg-fixed bg-center bg-no-repeat md:min-h-screen">
-      <Navbar user={session && session.user && session.user} />
-      <header className="md:pb80 mt-1 flex flex-1 bg-cover bg-center bg-no-repeat pb-4 pt-16 md:pt-20">
+    <div className="flex h-[500px] flex-col bg-[url(/header-bg/noise-1.png)] bg-cover bg-center bg-no-repeat md:min-h-screen">
+      <Navbar inHeader={true} user={session?.user} />
+
+      <header className="mt-1 flex flex-1 bg-cover bg-center bg-no-repeat pb-4 pt-16 md:pt-20">
         <Container className="relative z-10 flex flex-col items-center justify-center gap-8 md:flex-row md:justify-start">
           <div className="left space-y-8 text-center md:text-left">
             <div className="space-y-2">
@@ -28,20 +28,7 @@ export const Header = async () => {
               </p>
             </div>
 
-            <form
-              className="max-w-screen-md space-y-8"
-              action="/campaigns/reply"
-            >
-              <input
-                className="w-full rounded-sm border border-black px-4 py-2 text-center shadow-cs-2 shadow-red-500 outline-none focus:border-red-500  md:p-5 md:text-left"
-                placeholder="Paste campaign id"
-                name="campaignId"
-              />
-
-              <Button className="mx-auto md:mx-0" variant="noire">
-                Get started
-              </Button>
-            </form>
+            <CampaginSearchForm />
           </div>
 
           <SpinningHeaderText />

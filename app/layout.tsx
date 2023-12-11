@@ -1,7 +1,10 @@
 import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
+import { authOptions } from "@/lib/auth";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
+import { getServerSession } from "next-auth";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -20,15 +23,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await getServerSession(authOptions);
+
   return (
     <html lang="en">
       <body className={cn(inter.className, "flex min-h-screen flex-col")}>
-        <div className="flex-1">{children}</div>
+        <div className="flex-1">
+          <Navbar user={session?.user} />
+
+          {children}
+        </div>
+
         <Footer />
 
         <Analytics />

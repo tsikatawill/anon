@@ -17,7 +17,7 @@ export default function NotFound() {
 
         <Link
           href="/"
-          className={cn(BtnBaseStyles, BtnVariantStyles.primary, "mx-auto")}
+          className={cn(BtnBaseStyles, BtnVariantStyles.noire, "mx-auto")}
         >
           Go home
         </Link>

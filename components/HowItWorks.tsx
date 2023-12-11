@@ -55,7 +55,7 @@ const HowItWorksCard = ({
     <div className={cn("grid grid-cols-1 gap-4 sm:grid-cols-[1fr,48px,1fr]")}>
       <div
         className={cn(
-          "col-start-1 row-start-2",
+          "col-start-1 row-start-2 text-center sm:text-left",
           reversed ? "sm:col-start-3 sm:row-start-1" : "sm:row-start-1",
           "space-y-4",
         )}
@@ -69,7 +69,11 @@ const HowItWorksCard = ({
         {link && (
           <Link
             href={link.href}
-            className={cn(BtnBaseStyles, BtnVariantStyles.noire)}
+            className={cn(
+              BtnBaseStyles,
+              BtnVariantStyles.noire,
+              "mx-auto sm:mx-0",
+            )}
           >
             {link.text}
           </Link>
@@ -101,7 +105,7 @@ const HowItWorksCard = ({
         )}
       >
         <Image
-          className="h-auto w-1/3 sm:h-72 sm:w-full xl:h-80"
+          className="mx-auto h-auto w-1/3 sm:mx-0 sm:h-72 sm:w-full xl:h-80"
           src={image}
           width={500}
           height={500}

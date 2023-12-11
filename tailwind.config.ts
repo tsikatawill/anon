@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        shake: "shake 0.2s ease-in-out 2",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -21,6 +24,25 @@ const config: Config = {
         "cs-4": "10px 10px 0 black",
         "cs-5": "20px 20px 0 black",
         "cs-6": "25px 25px 0 black",
+      },
+      keyframes: {
+        shake: {
+          "0%": {
+            transform: "translateX(0) rotate(0deg)",
+          },
+          "25%": {
+            transform: "translateX(5px) rotate(0.1deg)",
+          },
+          "50%": {
+            transform: "translateX(-5px) rotate(-0.1deg)",
+          },
+          "75%": {
+            transform: "translateX(5px) rotate(0.1deg)",
+          },
+          "100%": {
+            transform: "translateX(0) rotate(0deg)",
+          },
+        },
       },
     },
   },
