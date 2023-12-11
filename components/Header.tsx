@@ -8,9 +8,9 @@ export const Header = async () => {
   const session = await getServerSession(authOptions);
 
   return (
-    <div className="flex h-[500px] flex-col  bg-[url(/header-bg/grid.png)] bg-cover bg-center bg-no-repeat md:min-h-screen">
+    <div className="flex h-[500px] flex-col  bg-[url(/header-bg/noise-1.png)] bg-cover bg-fixed bg-center bg-no-repeat md:min-h-screen">
       <Navbar user={session && session.user && session.user} />
-      <header className="mt-1 flex flex-1 bg-cover bg-center bg-no-repeat pt-16 md:pt-20">
+      <header className="md:pb80 mt-1 flex flex-1 bg-cover bg-center bg-no-repeat pb-4 pt-16 md:pt-20">
         <Container className="relative z-10 flex flex-col items-center justify-center gap-8 md:flex-row md:justify-start">
           <div className="left space-y-8 text-center md:text-left ">
             <div className="space-y-2">

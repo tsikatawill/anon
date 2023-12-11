@@ -10,8 +10,7 @@ export default async function LoginPage() {
   if (session) return redirect("/");
 
   return (
-    <Container>
-      Login page
+    <Container className=" grid min-h-screen place-content-center bg-[url(/header-bg/noise-1.png)] bg-cover bg-center bg-no-repeat">
       <LoginWithGoogle />
     </Container>
   );
