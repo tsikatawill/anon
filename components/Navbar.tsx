@@ -1,12 +1,27 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { BiLogOut } from "react-icons/bi";
+import { BtnBaseStyles, BtnVariantStyles, Button } from "./Button";
 import { Container } from "./Container";
 
-export const Navbar = () => {
+export const Navbar = ({
+  user,
+}: {
+  user?:
+    | {
+        name?: string | null | undefined;
+        email?: string | null | undefined;
+        image?: string | null | undefined;
+      }
+    | undefined
+    | null;
+}) => {
   const [transparentBg, setTransparentBg] = useState(true);
 
   useEffect(() => {
@@ -39,10 +54,46 @@ export const Navbar = () => {
         },
       }}
     >
-      <Container className="py-2 md:py-4">
+      <Container className="flex items-center justify-between py-2 md:py-4">
         <Link href="/" className="block w-12 md:w-full">
           <Image src="/anon-logoo.png" width={80} height={80} alt="logo" />
         </Link>
+
+        {user ? (
+          <div className="flex items-center gap-2">
+            {user.image && (
+              <Image
+                src={user.image}
+                width={200}
+                height={200}
+                alt={user.name as string}
+                className="h-10 w-10 rounded-full object-cover sm:h-16 sm:w-16"
+              />
+            )}
+
+            <Button
+              variant="blanc"
+              className="px-2 py-1"
+              onClick={() => {
+                if (window.confirm("Logout?")) {
+                  signOut();
+                }
+              }}
+            >
+              <div className="flex items-center gap-1">
+                Logout
+                <BiLogOut />
+              </div>
+            </Button>
+          </div>
+        ) : (
+          <Link
+            href="/login"
+            className={cn(BtnBaseStyles, BtnVariantStyles.noire, "px-2 py-1")}
+          >
+            Login
+          </Link>
+        )}
       </Container>
     </motion.nav>
   );
