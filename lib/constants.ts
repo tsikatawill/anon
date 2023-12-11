@@ -16,7 +16,7 @@ export const HOW_IT_WORKS_STEPS: HowIWStep[] = [
     description:
       "We currently run two types of campaigns, polls and general text campaigns. You can choose between these two and lorem u can choose between these two and lorem",
     link: {
-      href: "/sign-up",
+      href: "/login",
       text: "Create a free account",
     },
     image: "/step-2.svg",

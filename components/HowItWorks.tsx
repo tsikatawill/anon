@@ -20,7 +20,7 @@ export const HowItWorks = () => {
           </div>
         </div>
 
-        <ul className="space-y-12">
+        <ul className="space-y-16 md:space-y-20">
           {HOW_IT_WORKS_STEPS.map((_, idx) => (
             <HowItWorksCard
               key={idx}
@@ -52,18 +52,19 @@ const HowItWorksCard = ({
   image,
 }: StepCardProps) => {
   return (
-    <div
-      className={cn(
-        "flex items-center justify-center gap-4 sm:items-start",
-        reversed && "flex-row-reverse",
-      )}
-    >
-      <div className="left space-y-4 sm:flex-1">
+    <div className={cn("grid grid-cols-1 gap-4 sm:grid-cols-[1fr,48px,1fr]")}>
+      <div
+        className={cn(
+          "col-start-1 row-start-2",
+          reversed ? "sm:col-start-3 sm:row-start-1" : "sm:row-start-1",
+          "space-y-4",
+        )}
+      >
         <h3 className="text-xl font-bold text-orange-600 md:text-2xl">
           {title}
         </h3>
 
-        <p className="text-neutral-700">{description}</p>
+        <p className="text-neutral-500">{description}</p>
 
         {link && (
           <Link
@@ -75,7 +76,7 @@ const HowItWorksCard = ({
         )}
       </div>
 
-      <div className="middle hidden w-12 flex-shrink-0 space-y-5 font-bold sm:block md:w-24">
+      <div className="middle hidden flex-shrink-0 space-y-5 font-bold sm:block">
         <div className="text-center">
           <p>STEP</p>
           <p className="text-5xl">{step}</p>
@@ -87,15 +88,20 @@ const HowItWorksCard = ({
             last ? "hidden" : "flex",
           )}
         >
-          {Array.from({ length: 6 }).map((_, idx) => (
-            <div key={idx} className="h-2 w-2 rounded-full bg-gray-900" />
+          {Array.from({ length: 7 }).map((_, idx) => (
+            <div key={idx} className="h-2 w-2 rounded-full bg-neutral-500" />
           ))}
         </div>
       </div>
 
-      <div className="left w-1/3 flex-shrink-0 sm:w-auto sm:flex-1 sm:flex-shrink">
+      <div
+        className={cn(
+          "col-start-1 row-start-1",
+          reversed ? "sm:col-start-1 sm:row-start-1" : "sm:col-start-3",
+        )}
+      >
         <Image
-          className="h-auto w-full sm:h-60"
+          className="h-auto w-1/3 sm:h-72 sm:w-full xl:h-80"
           src={image}
           width={500}
           height={500}
