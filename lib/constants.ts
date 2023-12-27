@@ -1,8 +1,10 @@
 import { HowIWStep } from "@/types";
 
 export const REGEX = {
-  anonCampaignUrl:
-    /^https:\/\/anon-ruby\.vercel\.app\/campaigns\/anon-[A-Za-z0-9]+$/,
+  anonCampaignUrl: {
+    dev: /^http:\/\/localhost\:3000\/campaigns\/anon-[A-Za-z0-9]+$/,
+    prod: /^https:\/\/anon-ruby\.vercel\.app\/campaigns\/anon-[A-Za-z0-9]+$/,
+  },
 };
 
 export const HOW_IT_WORKS_STEPS: HowIWStep[] = [

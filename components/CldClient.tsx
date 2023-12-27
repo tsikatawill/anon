@@ -6,7 +6,7 @@ export const CldClient = ({ src }: { src: string }) => {
   return (
     <CldImage
       alt="..."
-      className="h-[1080px] w-[1920px] object-cover"
+      className="h-auto w-full object-cover"
       width={1920}
       height={1080}
       src={src}

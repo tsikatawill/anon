@@ -2,7 +2,7 @@
 
 import { REGEX } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "./Button";
 
@@ -13,12 +13,12 @@ export const CampaginSearchForm = () => {
     handleSubmit,
     register,
     formState: { errors },
-    reset,
   } = useForm<FormValue>();
 
+  const { push } = useRouter();
+
   const onSubmit: SubmitHandler<FormValue> = ({ campaignId }) => {
-    reset();
-    redirect(`/campaigns/${campaignId}`);
+    push(`${campaignId}`);
   };
 
   return (
@@ -38,7 +38,10 @@ export const CampaginSearchForm = () => {
           {...register("campaignId", {
             required: "Enter campaign url",
             pattern: {
-              value: REGEX.anonCampaignUrl,
+              value:
+                process.env.NODE_ENV === "development"
+                  ? REGEX.anonCampaignUrl.dev
+                  : REGEX.anonCampaignUrl.prod,
               message: "Enter a valid Anon campaign link",
             },
           })}

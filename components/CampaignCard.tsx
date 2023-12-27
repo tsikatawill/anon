@@ -22,7 +22,7 @@ export const CampaignCard = ({
     <Link
       href="/campaigns/12"
       className={cn(
-        "flex flex-shrink-0 flex-col justify-between gap-4 rounded-sm border border-black bg-white p-4 text-black shadow-cs-3 shadow-green-500 ease-in hover:border-2",
+        "flex flex-shrink-0 flex-col justify-between gap-4 rounded-xl border border-black bg-white p-4 text-black shadow-cs-3 shadow-green-500 ease-in hover:border-2",
         fullWidth ? "h-full w-full gap-4" : " h-80 w-72",
       )}
       style={{ boxShadow: `5px 5px 0 ${color}` }}
