@@ -45,7 +45,7 @@ export const Navbar = ({
 
   useEffect(() => {
     handleScroll();
-  }, []);
+  }, [handleScroll]);
 
   return (
     <motion.nav
