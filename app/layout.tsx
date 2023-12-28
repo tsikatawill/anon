@@ -10,6 +10,8 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const revalidate = 3;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://anon-ruby.vercel.app"),
   alternates: {

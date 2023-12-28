@@ -9,45 +9,6 @@ import { notFound } from "next/navigation";
 import { FaPoll } from "react-icons/fa";
 import { IoMdChatboxes } from "react-icons/io";
 import { v4 as uuidv4 } from "uuid";
-
-// export const generateMetadata: Promise<Metadata> = async () => {
-//   return {
-//     title: "Campaign - Anon",
-//     description: "",
-//     openGraph: {
-//       images: [
-//         {
-//           width: 1920,
-//           height: 1080,
-//           url: getCldOgImageUrl({
-//             src: "zlra5l8wdyorvmi49zqf",
-//             overlays: [
-//               {
-//                 width: 1800,
-//                 height: 700,
-//                 crop: "fit",
-//                 text: {
-//                   color: "black",
-//                   fontFamily: "Lato",
-//                   fontSize: 150,
-//                   lineSpacing: -20,
-//                   fontWeight: "bold",
-//                   text: "",
-//                 },
-//                 position: {
-//                   x: 100,
-//                   y: 200,
-//                   gravity: "north_west",
-//                 },
-//               },
-//             ],
-//           }),
-//         },
-//       ],
-//     },
-//   };
-// };
-
 export async function generateMetadata({
   params: { slug },
 }: {
