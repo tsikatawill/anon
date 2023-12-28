@@ -14,7 +14,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  if (!!/^anon-/.test(slug)) notFound();
+  if (!/^anon-/.test(slug)) notFound();
 
   const campaign = await getCampaign(slug.split("anon-")[1]);
 
