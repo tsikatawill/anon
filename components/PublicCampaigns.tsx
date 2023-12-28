@@ -1,10 +1,13 @@
+import { getPublicCampaigns } from "@/lib/queries";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { BtnBaseStyles, BtnVariantStyles } from "./Button";
 import { CampaignCard } from "./CampaignCard";
 import { Container } from "./Container";
 
-export const PublicCampaigns = () => {
+export const PublicCampaigns = async () => {
+  const campaigns = await getPublicCampaigns();
+
   return (
     <section id="public-campaigns">
       <Container className="grid grid-cols-1 gap-20 py-8 sm:py-16 md:grid-cols-5 md:gap-10 md:py-32">
@@ -33,13 +36,19 @@ export const PublicCampaigns = () => {
           </Link>
         </div>
 
-        <div className="md:col-span-3">
-          <div className="flex w-full gap-4 overflow-x-auto pb-5 pr-5">
-            {Array.from({ length: 12 }).map((item, idx) => (
-              <CampaignCard key={idx} index={idx} />
-            ))}
+        {campaigns && (
+          <div className="md:col-span-3">
+            <div className="flex w-full gap-4 overflow-x-auto pb-5 pr-5">
+              {campaigns.map((campaign, idx) => (
+                <CampaignCard
+                  key={campaign._id}
+                  index={idx}
+                  campaign={campaign}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </Container>
     </section>
   );

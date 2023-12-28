@@ -1,6 +1,8 @@
 "use client";
 
 import { BACKGROUNDLIST, cn } from "@/lib/utils";
+import { Campaign } from "@/types";
+import dayjs from "dayjs";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaPoll } from "react-icons/fa";
@@ -10,34 +12,37 @@ import { Button } from "./Button";
 export const CampaignCard = ({
   index,
   fullWidth = false,
+  campaign,
 }: {
   color?: string;
   index: number;
   fullWidth?: boolean;
+  campaign: Campaign;
 }) => {
   const color = BACKGROUNDLIST[index % BACKGROUNDLIST.length];
   const router = useRouter();
 
   return (
     <Link
-      href="/campaigns/12"
+      href={`/campaigns/anon-${campaign._id}`}
       className={cn(
         "flex flex-shrink-0 flex-col justify-between gap-4 rounded-xl border border-black bg-white p-4 text-black shadow-cs-3 shadow-green-500 ease-in hover:border-2",
         fullWidth ? "h-full w-full gap-4" : " h-80 w-72",
       )}
       style={{ boxShadow: `5px 5px 0 ${color}` }}
     >
-      <p className="line-clamp-5 text-2xl font-bold">
-        Would you still love me if I were broke and had nothing to my name?
-        {!!(index % 2) &&
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore quaerat rerum quibusdam. Totam excepturi enim ratione natus accusantium esse repellat perferendis praesentium? Commodi quaerat quas est illum rem ipsam fugiat."}
+      <p className="line-clamp-4 text-xl font-bold sm:text-3xl">
+        {campaign.title}
       </p>
 
       <div className="space-y-4">
         <div className="flex gap-4">
-          <FaPoll size={20} title="Poll" />
-          <IoMdChatboxes size={23} title="Text" />
-          <p>20th, Dec</p>
+          {campaign.type === "general" ? (
+            <FaPoll size={20} title="Poll" />
+          ) : (
+            <IoMdChatboxes size={23} title="Text" />
+          )}
+          <p>{dayjs(campaign.createdAt).toString()}</p>
         </div>
 
         <Button

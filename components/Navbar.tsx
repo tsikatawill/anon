@@ -6,7 +6,7 @@ import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { BtnBaseStyles, BtnVariantStyles, Button } from "./Button";
 import { Container } from "./Container";
@@ -29,18 +29,22 @@ export const Navbar = ({
   const [transparentBg, setTransparentBg] = useState(true);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setTransparentBg(false);
-      } else {
-        setTransparentBg(true);
-      }
-    };
+  const handleScroll = useCallback(() => {
+    if (window.scrollY > 50) {
+      setTransparentBg(false);
+    } else {
+      setTransparentBg(true);
+    }
+  }, []);
 
+  useEffect(() => {
     window.addEventListener("scroll", () => handleScroll());
 
     return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  useEffect(() => {
+    handleScroll();
   }, []);
 
   return (
